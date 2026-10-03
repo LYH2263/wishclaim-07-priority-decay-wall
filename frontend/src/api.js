@@ -11,3 +11,8 @@ export async function api(path, opts = {}) {
   if (r.status === 204) return null
   return r.json()
 }
+
+export function fmtScore(v) {
+  if (v === null || v === undefined) return '—'
+  return Number(v).toFixed(1).replace(/\.0$/, '')
+}
